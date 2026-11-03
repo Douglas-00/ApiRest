@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+web
+data
+test
+.env
+.git
+*.db
+uploads
