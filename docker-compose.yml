@@ -1,0 +1,26 @@
+services:
+  api:
+    build: .
+    environment:
+      # Local development only. Use a real secret in any shared environment.
+      JWT_SECRET: local-dev-secret-change-me-please
+      # Optional: raises the GitHub API limit (export it before `docker compose up`).
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    volumes:
+      - cofre-data:/app/data
+    ports:
+      - "3000:3000"
+
+  web:
+    build: ./web
+    environment:
+      API_URL: http://api:3000
+      INSECURE_COOKIES: "true"
+    ports:
+      - "3001:3001"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  cofre-data:
