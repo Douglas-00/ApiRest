@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+.env
+# Local SQLite databases and uploaded files never go to git
+*.db
+*.db-journal
+uploads/
