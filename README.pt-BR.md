@@ -144,11 +144,6 @@ cd web && npm test
 | --- | --- |
 | ![Início](docs/screenshots/home.png) | ![Mobile](docs/screenshots/mobile-dark.png) |
 
-## Próximos passos
-
-- Armazenamento em S3 com URLs pré-assinadas, no lugar do volume local.
-- Antivírus e cota por usuário.
-- Refresh token e revogação de sessão.
 
 ---
 
